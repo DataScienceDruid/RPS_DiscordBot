@@ -14,7 +14,7 @@ bot = commands.Bot(command_prefix = "!", intents=intents)
 
 
 class RPS_View(discord.ui.View):
-    # int [1, 2, 3] for Rock, Paper, or Scissors (0 otherwise)
+    # int [4, 5, 6] for Rock, Paper, or Scissors (0 otherwise)
     optionValue : int = 0
 
     async def disable_all(self):
