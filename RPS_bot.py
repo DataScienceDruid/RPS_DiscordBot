@@ -13,8 +13,6 @@ bot = commands.Bot(command_prefix = "!", intents=intents)
 #This is if we wanted to deal with client events and the like
 
 
-
-
 class RPS_View(discord.ui.View):
     # int [1, 2, 3] for Rock, Paper, or Scissors (0 otherwise)
     optionValue : int = 0
@@ -47,10 +45,6 @@ class RPS_View(discord.ui.View):
         self.optionValue = 6
         print(self.optionValue)
         self.stop()
-
-
-
-
 
 async def RPS(challenger:discord.User, defender:discord.User):
     prompt = f"You've been challenged to Rock, Paper, Scissors by {challenger}"
@@ -120,9 +114,6 @@ async def on_message(message):
 
 #####BOT COMMANDS#####
 
-
-
-
 @bot.command(pass_context = True)
 async def challenge(ctx, user:discord.User, *, message=None):
     result = await RPS(ctx.author, user)
@@ -149,6 +140,7 @@ async def shutdown(ctx):
     await bot.close()
     
 from apikeys import TOKEN
-
+## You will need your own "apikeys.py" file in the directory containing a constant called 'TOKEN' 
+## Which is a string that contains the token for your unique discord bot.
 bot.run(TOKEN)
 
